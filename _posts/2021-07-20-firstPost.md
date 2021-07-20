@@ -18,6 +18,7 @@ last_modified_at: 2021-07-20
 # 모의고사
 
 import java.util.*;
+
 class Solution {
     public int[] solution(int[] answers) {
         int[] people1 = {1,2,3,4,5};
