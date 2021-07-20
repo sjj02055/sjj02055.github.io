@@ -105,7 +105,7 @@ author:
   avatar           : "/assets/images/me.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "내 개발로그"
   location         : "서울"
-  email            :
+  email            : "sjj02055@gmail.com"
   links:
     - label: "sjj02055@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
