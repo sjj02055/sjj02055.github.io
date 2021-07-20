@@ -5,7 +5,7 @@ excerpt: "1번 문제부터 마지막 문제까지의 정답이 순서대로 들
 categories:
   - Programmers
 tags:
-  - [Blog, jekyll, Github, Git]
+  - [Programmers, Algorithm]
 
 toc: true
 toc_sticky: true
