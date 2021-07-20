@@ -20,6 +20,7 @@ last_modified_at: 2021-07-20
 import java.util.*;
 
 class Solution {
+
     public int[] solution(int[] answers) {
         int[] people1 = {1,2,3,4,5};
         int[] people2 = {2,1,2,3,2,4,2,5};
@@ -27,7 +28,7 @@ class Solution {
         int count=0;
         int check[]=new int[3];
         int temp=0;
-        
+
         while(count<answers.length){
             if(answers[count]==people1[count%5])
                 check[0]++;
