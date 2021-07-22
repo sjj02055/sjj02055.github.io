@@ -48,123 +48,126 @@ costs를 그림으로 표현하면 다음과 같으며, 이때 초록색 경로�
 이 문제에서 코드를 한 메소드씩 끊어서 보면,
 find 메소드는 현재 노드의 최상위 부모를 찾는 것이다. 만약 내가 최상위 부모이면 return으로 자신이 나올 것이고 아니면 최상위 부모의 값이 나올 것이다.
 
-public int find(int x){
+    public int find(int x)
+    {
+        
         if(x==parent[x])
+
             return x;
         return parent[x]=find(parent[x]);
     }
 
 다음은 check메소드다. 각 노드들의 최상위 부모를 찾은 후 만약 둘이 같다면 연결할 필요가 없으니 false값을 주고 만약 둘이 다르다면 새로 합치고 true값을 반환한다.
 
-public boolean check(int x, int y){
-        int a = find(x);
-        int b = find(y);
-        if(a==b)
-            return false;
-        return true;
-    }
+    public boolean check(int x, int y){
+            int a = find(x);
+            int b = find(y);
+            if(a==b)
+                return false;
+            return true;
+        }
 
 다음은 union메소드다. 방금 전 check메소드에서 true값이게 되면 합쳐주면서 부모를 설정해주게 된다.
 
-public void union(int x, int y){
-        int a= find(x);
-        int b= find(y);
-        
-        if(a>b){
-            int temp=a;
-            a=b;
-            b=temp;
+    public void union(int x, int y){
+            int a= find(x);
+            int b= find(y);
+            
+            if(a>b){
+                int temp=a;
+                a=b;
+                b=temp;
+            }
+            parent[b]=a;
         }
-        parent[b]=a;
-    }
 
 제일 중요한 가중치에 따라 오름차순으로 정리하는 방법이다. Comparable과 compareTo를 사용하여 Node들 중에 weight에 따라서 작은 것부터 큰 것까지 정리하는 sort다.
 
-class Node implements Comparable<Node>{
-        int from, to, weight;
-        Node(int from, int to, int weight){
-            this.from = from;
-            this.to = to;
-            this.weight = weight;
+    class Node implements Comparable<Node>{
+            int from, to, weight;
+            Node(int from, int to, int weight){
+                this.from = from;
+                this.to = to;
+                this.weight = weight;
+            }
+            @Override
+            public int compareTo(Node o){
+                return this.weight - o.weight;
+            }
         }
-        @Override
-        public int compareTo(Node o){
-            return this.weight - o.weight;
-        }
-    }
 
 마지막은 모든 코드와 같이 첨부하겠다. 처음엔 모두 자기 자신이 부모노드라고 설정한 뒤 weight가 낮은 것 부터 순서대로 만약 최상위 부모가 새로 들어온 노드와 겹치지 않는다면 합쳐주면서 weight를 answer에 합쳐주는 방법으로 문제를 풀 수 있다.
 
 
-import java.util.*;
+    import java.util.*;
 
-class Solution {
+    class Solution {
 
-    int parent[];
+        int parent[];
 
-    public int solution(int n, int[][] costs) {
-        int answer = 0;
-        parent = new int[n];
-        ArrayList<Node> list = new ArrayList<>();
-        
-        for(int i=0; i<costs.length; i++){
-            list.add(new Node(costs[i][0],costs[i][1],costs[i][2]));
+        public int solution(int n, int[][] costs) {
+            int answer = 0;
+            parent = new int[n];
+            ArrayList<Node> list = new ArrayList<>();
+            
+            for(int i=0; i<costs.length; i++){
+                list.add(new Node(costs[i][0],costs[i][1],costs[i][2]));
+            }
+            
+            for(int i=0; i<n; i++)
+            {
+                parent[i]=i;
+            }
+            
+            Collections.sort(list);
+            
+            for(int i=0; i<list.size(); i++)
+            {
+                Node a=list.get(i);
+                if(check(a.from, a.to)){
+                    answer+=a.weight;
+                    union(a.from, a.to);
+                }
+            }
+            
+            return answer;
+        }
+        public int find(int x){
+            if(x==parent[x])
+                return x;
+            return parent[x]=find(parent[x]);
         }
         
-        for(int i=0; i<n; i++)
-        {
-            parent[i]=i;
+        public boolean check(int x, int y){
+            int a = find(x);
+            int b = find(y);
+            if(a==b)
+                return false;
+            return true;
         }
         
-        Collections.sort(list);
+        public void union(int x, int y){
+            int a= find(x);
+            int b= find(y);
+            
+            if(a>b){
+                int temp=a;
+                a=b;
+                b=temp;
+            }
+            parent[b]=a;
+        }
         
-        for(int i=0; i<list.size(); i++)
-        {
-            Node a=list.get(i);
-            if(check(a.from, a.to)){
-                answer+=a.weight;
-                union(a.from, a.to);
+        class Node implements Comparable<Node>{
+            int from, to, weight;
+            Node(int from, int to, int weight){
+                this.from = from;
+                this.to = to;
+                this.weight = weight;
+            }
+            @Override
+            public int compareTo(Node o){
+                return this.weight - o.weight;
             }
         }
-        
-        return answer;
     }
-    public int find(int x){
-        if(x==parent[x])
-            return x;
-        return parent[x]=find(parent[x]);
-    }
-    
-    public boolean check(int x, int y){
-        int a = find(x);
-        int b = find(y);
-        if(a==b)
-            return false;
-        return true;
-    }
-    
-    public void union(int x, int y){
-        int a= find(x);
-        int b= find(y);
-        
-        if(a>b){
-            int temp=a;
-            a=b;
-            b=temp;
-        }
-        parent[b]=a;
-    }
-    
-    class Node implements Comparable<Node>{
-        int from, to, weight;
-        Node(int from, int to, int weight){
-            this.from = from;
-            this.to = to;
-            this.weight = weight;
-        }
-        @Override
-        public int compareTo(Node o){
-            return this.weight - o.weight;
-        }
-    }
-}
