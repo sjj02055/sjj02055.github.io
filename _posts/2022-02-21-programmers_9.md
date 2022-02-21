@@ -33,39 +33,39 @@ last_modified_at: 2022-02-21
 처음에는 이것을 DFS로 해서 풀려고 했다. 그랬더니 계속 시간 초과가 나오길래 무언가
 시간을 많이 잡아먹는 요소가 있구나 했다.
 
-class Solution {
-    int answer = 0;
-    public int solution(int[][] triangle) {
-        
-        DFS(0,0,triangle,answer);
-        return answer;
-    }
-    
-    public void DFS(int depth,int row,int[][] triangle,int sum){
-        if(depth+1==triangle.length){
-            sum += triangle[depth][row];
-            answer=Math.max(sum,answer);
-            return;
+    class Solution {
+        int answer = 0;
+        public int solution(int[][] triangle) {
+            
+            DFS(0,0,triangle,answer);
+            return answer;
         }
-        sum += triangle[depth][row];
-        DFS(depth+1,row,triangle,sum);
-        DFS(depth+1,row+1,triangle,sum);
+        
+        public void DFS(int depth,int row,int[][] triangle,int sum){
+            if(depth+1==triangle.length){
+                sum += triangle[depth][row];
+                answer=Math.max(sum,answer);
+                return;
+            }
+            sum += triangle[depth][row];
+            DFS(depth+1,row,triangle,sum);
+            DFS(depth+1,row+1,triangle,sum);
+        }
     }
-}
 
 처음에 내가 풀었던 방식인데 이 방식으로 하면 맨처음 7이 depth 0이라고 할 때,
 depth 1의 3과 8의 경우 둘 다 1을 더하게 되는 중복이 일어나게 되었다.
 그래서 이것을 탑다운 방식으로 풀게되면 이 사단이 일어나겠구나 해서 다운탑방식으로
 풀게되었다.
 
-class Solution {
-    public int solution(int[][] triangle) {
-        for(int i=triangle.length-2;i>=0;i--){
-            for(int j=0; j<triangle[i].length;j++){
-                triangle[i][j]=Math.max(triangle[i+1][j],triangle[i+1][j+1])
-                + triangle[i][j];
+    class Solution {
+        public int solution(int[][] triangle) {
+            for(int i=triangle.length-2;i>=0;i--){
+                for(int j=0; j<triangle[i].length;j++){
+                    triangle[i][j]=Math.max(triangle[i+1][j],triangle[i+1][j+1])
+                    + triangle[i][j];
+                }
             }
+        return triangle[0][0];
         }
-    return triangle[0][0];
     }
-}
