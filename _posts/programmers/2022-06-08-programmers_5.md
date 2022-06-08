@@ -3,7 +3,7 @@ title:  "[프로그래머스] 체육복"
 excerpt: "학생수가 n명이고 체육복을 잃어버린 사람의 배열이 lost이고 예비체육복을 가져온 사람의 배열이 reserve일 때, 체육복을 들을 수 있는 학생의 최댓값을 return"
 
 categories:
-  - Baekjoon
+  - Programmers
 
 toc: true
 toc_sticky: true

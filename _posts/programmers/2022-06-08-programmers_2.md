@@ -3,13 +3,13 @@ title:  "[프로그래머스] H-index"
 excerpt: "논문 n편중 h번이상 인용된 논문이 h편 이상이고 나머지가 h편 이하일 때, H-Index의 최댓값은 h다. "
 
 categories:
-  - Baekjoon
+  - Programmers
 
 toc: true
 toc_sticky: true
  
-date: 2021-07-21
-last_modified_at: 2021-07-21
+date: 2022-06-08
+last_modified_at: 2022-06-08
 ---
 
 

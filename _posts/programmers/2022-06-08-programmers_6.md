@@ -3,7 +3,7 @@ title:  "[프로그래머스] 섬 연결하기"
 excerpt: "n개의 섬 사이에 다리를 건설하는 비용(costs)이 주어질 때, 최소의 비용으로 모든 섬이 서로 통행 가능하도록 만들 때 필요한 최소 비용을 return 하도록 solution을 완성하세요."
 
 categories:
-  - Baekjoon
+  - Programmers
 
 toc: true
 toc_sticky: true

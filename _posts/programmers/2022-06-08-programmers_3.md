@@ -3,7 +3,7 @@ title:  "[프로그래머스] 가장 큰 수"
 excerpt: "0 또는 양의 정수를 이어붙여 가장 큰 수를 만들기"
 
 categories:
-  - Baekjoon
+  - Programmers
 
 toc: true
 toc_sticky: true
