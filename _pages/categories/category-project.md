@@ -1,7 +1,7 @@
 ---
-title: "프로그래머스"
+title: "프로젝트"
 layout: archive
-permalink: /categories/projects
+permalink: categories/projects
 author_profile: true
 sidebar_main: true
 ---
