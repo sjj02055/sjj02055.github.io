@@ -3,7 +3,7 @@ title:  "[프로그래머스] 가장 큰 수"
 excerpt: "0 또는 양의 정수를 이어붙여 가장 큰 수를 만들기"
 
 categories:
-  - Programmers
+  - Baekjoon
 
 toc: true
 toc_sticky: true
@@ -18,7 +18,7 @@ last_modified_at: 2021-07-21
 - 수가 너무 클 수 있으니 문자열로 바꾸어 return
 
 예시)
-[6,10,2] -> return: 6210
+[6,10,2] -> return: 6210 
 [3,30,34,5,9] -> return 9534330
 
 풀이법:
