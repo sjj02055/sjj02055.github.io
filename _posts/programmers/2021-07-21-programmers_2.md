@@ -23,6 +23,7 @@ last_modified_at: 2021-07-21
 풀이법:
 answer을 count로 생각한 뒤, count보다 작은 citation[i]들을 삭제하고 citations.length와 count가 같아지면 그 count가 최댓값 h가 된다.
 
+```java
 import java.util.*;
 
 class Solution {
@@ -53,3 +54,4 @@ class Solution {
         return answer;
     }
 }
+```

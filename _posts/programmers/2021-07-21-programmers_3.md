@@ -25,6 +25,7 @@ last_modified_at: 2021-07-21
 자바 메소드 중 compareTo()를 사용하면 String클래스의 문자열간 큰기를 비교할 수 있다.
 (b+a)compareTo(a+b)를 사용해 b+a가 a+b보다 크다면 b와 a의 자리를 바꿔줌
 
+```java
 import java.util.*;
 
 class Solution {
@@ -55,3 +56,4 @@ class Solution {
         return answer;
     }
 }
+```

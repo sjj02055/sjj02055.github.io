@@ -42,7 +42,7 @@ n개의 음이 아닌 정수가 있습니다. 이 수를 적절히 더하거나 
 2. 그 횟수를 세서 numbers.length와 같아지면 return한다.
 3. return시에 그 수들이 target과 같아지면 answer++한다.
 
-
+```java
         import java.util.*;
         
         class Solution {
@@ -72,5 +72,6 @@ n개의 음이 아닌 정수가 있습니다. 이 수를 적절히 더하거나 
                 return;
             }
         }
+```
 
 알고리즘 푸는데 원래 상당히 오래걸리지만 이 문제는 간단해서 금방 풀었던 것 같다.

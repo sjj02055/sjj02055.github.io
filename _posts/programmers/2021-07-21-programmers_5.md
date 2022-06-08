@@ -25,7 +25,7 @@ last_modified_at: 2021-07-21
 체육복을 빌려본다.
 
 
-
+```java
 import java.util.*;
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
@@ -79,3 +79,4 @@ class Solution {
         return answer;
     }
 }
+```

@@ -35,7 +35,7 @@ ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA
 풀이법: char형의 경우 문자와 문자의 뺄셈을 통해 얼마나 상하이동을 해야하는지 알 수 있고, 좌우이동의 경우는 그리디 알고리즘을 통해 인덱스에 따라서 좌우 이동거리를 측정하였다.
 
 
-
+```java
 import java.util.ArrayList;
 
 class Solution {
@@ -72,3 +72,4 @@ class Solution {
         return answer;
     }
 }
+```

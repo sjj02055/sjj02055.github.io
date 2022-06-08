@@ -14,7 +14,7 @@ last_modified_at: 2021-07-20
 
 
 # 모의고사
-
+```java
 import java.util.*;
 
 class Solution {
@@ -55,3 +55,4 @@ class Solution {
         return answer;
     }
 }
+```
