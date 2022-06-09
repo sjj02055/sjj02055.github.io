@@ -33,8 +33,8 @@
         <span class="nav__sub-title">프로젝트</span>
         <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Projects" %}
-                        <li><a href="/categories/projects" class="">프로젝트 ({{category[1].size}})</a></li>
+                    {% if category[0] == "Instagram" %}
+                        <li><a href="/categories/instagram" class="">인스타그램 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
