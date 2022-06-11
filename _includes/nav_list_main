@@ -31,7 +31,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Instagram" %}
-                        <li><a href="/categories/Instagram" class="">프로젝트 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/instagram" class="">프로젝트 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
